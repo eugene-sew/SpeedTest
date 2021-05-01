@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMONIC ADMIN</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">
+            <strong>AMONIC AIRLINES</strong>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/create"><button class="add-user" id="add-user">Add User</button></a></li>
+            <li><button class="exit" id="leave-btn" onclick=leave("/")>Exit</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="office-select">
+            <label for="select">Select office</label>
+            <select name="Office" id="office">
+                <option value="Dubai">Dubai</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Dubai">Dubai</option>
+            </select>
+        </div>
+
+
+        <table class="users-table">
+            <thead>
+                <th>Name</th>
+                <th>LastName</th>
+                <th>Age</th>
+                <th>User-Role</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Office</th>
+                <th class="change-role-column" >Change Role</th>
+                <th class="activate-column">Activate</th>
+            </thead>
+
+            <tbody>
+
+              
+
+                {{#each users}}
+                <tr>
+                    <td>{{UserFirstName}}</td>
+                    <td>{{UserLastName}}</td>
+                    <td>35</td>
+                    <td id="role">{{RoleTitle}}</td>
+                    <td>{{UserEmail}}</td>
+                    <td><address>No. 15 Cornsville</address></td>
+                    <td>{{OfficeTitle}}</td>
+                    {{!-- have an onclick function that will get the user id and perform neccessary operations --}}
+                    <td><button class="change-role" >Change Role</button></td>
+                    <td><button class="activate">Activate</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+
+      
+   
+    </main>
+
+    <script src="/js/leave.js"></script>
+    <script>
+        const role = document.getElementById("role")
+
+        if ( role.value == "Administrator"){
+            role.className="Admin"
+        }else{
+            role.className="User"
+        }
+    </script>
+</body>
+</html>

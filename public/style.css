@@ -1,0 +1,26 @@
+body {
+  background: rgb(233, 233, 233);
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+  position: relative;
+  top: 10rem;
+  text-align: center;
+}
+
+.main h1 {
+  font-size: 5rem;
+  color: rgb(34, 34, 34);
+}
+
+.main .buttons a button {
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid limegreen;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+}

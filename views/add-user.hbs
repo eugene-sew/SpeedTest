@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/login.css" />
+    <title>AMONIC SYSTEMS</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" class="form" action="/auth/create" method="POST">
+        <h2>Add new user</h2>
+        <div class="form-control">
+          <label for="firstname">Firstname</label>
+          <input type="text" id="firstname" placeholder="Enter your firstname" name="firstname" />
+          <small></small>
+        </div>
+
+        <div class="form-control">
+          <label for="lastname">Lastname</label>
+          <input type="text" id="lastname" placeholder="Enter your lastname" name="lastname"/>
+          <small></small>
+        </div>
+
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email"  />
+          <small></small>
+        </div>
+
+{{!-- loop to cycle through offices --}}
+
+        <div class="form-control">
+          <label for="office">Office</label>
+          <select type="text" id="office" placeholder="Enter your email" name="office" />
+           <option value="Dubai">Dubai</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Dubai">Dubai</option>
+          </select>
+        </div>
+
+        <div class="form-control">
+          <label for="date">Birthdate</label>
+          <input type="date" id="date" placeholder="Birthdate" name="birthdate"/>
+        </div>
+
+
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            name="password"
+          />
+          <small>Error message</small>
+        </div>
+
+        <button type="submit">Submit</button>
+        <button class="cancel" id="leave-btn" onclick=leave("/admin") type="button">Cancel</button>
+        
+      </form>
+
+       {{#if message}}
+      <center><small class="form-control-error">
+        {{message}}
+      </small></center>
+      {{/if}}
+    </div>
+    <script src="/js/leave.js"></script>
+    {{!-- <script src="/js/add-user-validator.js"></script> --}}
+    
+
+    {{!-- a script to exit the add user form --}}
+    <script>
+      
+    
+
+    </script>
+  </body>
+</html>
+

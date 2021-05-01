@@ -1,0 +1,48 @@
+send database data to main view admin, 
+finish up login and add user
+
+router.get('/user-list', function(req, res, next) {
+    var sql='SELECT * FROM users';
+    db.query(sql, function (err, data, fields) {
+    if (err) throw err;
+    res.render('user-list', { title: 'User List', userData: data});
+  });
+});
+
+ <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.fullName %></td>
+            <td><%=data.emailAddress %></td>
+            <td><%=data.city %></td>
+            <td><%=data.country %></td>
+            <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
+            <td><a href="/users/delete/<%=data.id%>">Delete</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+
+
+
+          {{#if( users.length != 0){
+                    var i = 1
+                    users.forEach((data)=>{
+                        
+                    })
+                    }
+                }}
+
+
+        <ul class="people_list">
+  {{#each people}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>

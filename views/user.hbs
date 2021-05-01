@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMONIC ADMIN</title>
+    <link rel="stylesheet" href="/user.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">
+            <strong>AMONIC AIRLINES</strong>
+        </div>
+        <ul class="nav-list">
+           
+            <li><button class="exit" id="leave-btn" onclick=leave("/")>Exit</button></li>
+        </ul>
+    </nav>
+
+    <main>
+       
+       <div class="user-details">
+           <p>Welcome Back , {{username}}
+               <br>
+               Time spent on system : 00:24:03
+               <br>
+               Number of System Crashes reported: 2
+           </p>
+
+       </div>
+
+
+        <table class="users-table">
+            <thead>
+                <th>Date</th>
+                <th>Login Time</th>
+                <th>Logout time</th>
+                <th>Time Spent</th>
+                <th>Crash Details</th>
+               
+              
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>10/04/2021</td>
+                    <td>14:52</td>
+                    <td>17:52</td>
+                    <td>3 hrs</td>
+                    <td> Power Outage </td>                 
+                </tr>
+
+                <tr>
+                    <td>08/04/2021</td>
+                    <td>08:00</td>
+                    <td>09:00</td>
+                    <td>1 hrs</td>
+                    <td> No Crash Reported</td>                 
+                </tr>
+
+                <tr>
+                    <td>05/04/2021</td>
+                    <td>12:30</td>
+                    <td>13:00</td>
+                    <td>30 mins</td>
+                    <td> Slow Internet Connectivity </td>                 
+                </tr>
+
+                <tr>
+                    <td>10/04/2021</td>
+                    <td>06:00</td>
+                    <td>14:00</td>
+                    <td>8 hrs</td>
+                    <td> No Crash Reported </td>                 
+                </tr>
+              
+            </tbody>
+        </table>
+
+
+      
+   
+    </main>
+
+    <script src="/js/leave.js"></script>
+</body>
+</html>
