@@ -65,15 +65,38 @@ exports.create = (req, res) => {
       }
 
       if (results.length > 0) {
-        return res.render("/create", {
-          message: "Email already in use",
-        });
+        res.render("add-user", { message: "Email already in use" });
       }
 
       let hashedPassword = await bcrypt.hash(password, 8);
-      console.log(hashedPassword);
 
-      db.query("INSERT INTO users SET ?", { name: name });
+      db.query(
+        "INSERT INTO users SET ?",
+        {
+          RoleID: 2,
+          Email: email,
+          Password: hashedPassword,
+          FirstName: firstname,
+          LastName: lastname,
+          officeID: office,
+          Birthdate: birthdate,
+          Active: 1,
+        },
+        (error, result) => {
+          if (error) {
+            console.log(error);
+          } else {
+            res.redirect(
+              url.format({
+                pathname: "/create",
+                query: {
+                  message: "User added successfully",
+                },
+              })
+            );
+          }
+        }
+      );
     }
   );
 };

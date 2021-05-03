@@ -33,10 +33,10 @@
 
         <div class="form-control">
           <label for="office">Office</label>
-          <select type="text" id="office" placeholder="Enter your email" name="office" />
-           <option value="Dubai">Dubai</option>
-                <option value="Dubai">Dubai</option>
-                <option value="Dubai">Dubai</option>
+          <select type="text" id="office" placeholder="Enter your email" name="office"/>
+          {{#each offices}}
+           <option value={{OfficeID}}>{{OfficeTitle}}</option>
+          {{/each}}
           </select>
         </div>
 
@@ -54,7 +54,6 @@
             placeholder="Enter your password"
             name="password"
           />
-          <small>Error message</small>
         </div>
 
         <button type="submit">Submit</button>
@@ -68,11 +67,13 @@
       </small></center>
       {{/if}}
     </div>
+
+      {{!-- a script to exit the add user form --}}
     <script src="/js/leave.js"></script>
     {{!-- <script src="/js/add-user-validator.js"></script> --}}
     
 
-    {{!-- a script to exit the add user form --}}
+  
     <script>
       
     

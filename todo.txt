@@ -1,6 +1,26 @@
 send database data to main view admin, 
 finish up login and add user
 
+calculate age 
+
+birthdate = new Date(userBirthdate)
+birthdate_day = birthdate.getDate()
+birthdate_month = birthdate.getMonth()
+birthdate_year = birthdate.getFullYear()
+
+current_date = new Date()
+current_date_day = current_date.getDate()
+current_date_month = current_date.getMonth()
+current_date_year = current_date.getFullYear()
+
+age = 0
+if(current_date_month > birthdate_month ){
+  age = current_date_year-birthdate_year
+}else {
+  age = current_date_year - birthdate_year -1
+}
+
+
 router.get('/user-list', function(req, res, next) {
     var sql='SELECT * FROM users';
     db.query(sql, function (err, data, fields) {

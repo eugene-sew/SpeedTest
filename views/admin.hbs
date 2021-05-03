@@ -36,7 +36,6 @@
                 <th>Age</th>
                 <th>User-Role</th>
                 <th>Email</th>
-                <th>Address</th>
                 <th>Office</th>
                 <th class="change-role-column" >Change Role</th>
                 <th class="activate-column">Activate</th>
@@ -47,13 +46,14 @@
               
 
                 {{#each users}}
+
+                
                 <tr>
                     <td>{{UserFirstName}}</td>
                     <td>{{UserLastName}}</td>
-                    <td>35</td>
+                    <td id="age">{{UserBirthdate}}</td>
                     <td id="role">{{RoleTitle}}</td>
-                    <td>{{UserEmail}}</td>
-                    <td><address>No. 15 Cornsville</address></td>
+                    <td>{{UserEmail}}</td>            
                     <td>{{OfficeTitle}}</td>
                     {{!-- have an onclick function that will get the user id and perform neccessary operations --}}
                     <td><button class="change-role" >Change Role</button></td>
@@ -69,14 +69,8 @@
     </main>
 
     <script src="/js/leave.js"></script>
-    <script>
-        const role = document.getElementById("role")
 
-        if ( role.value == "Administrator"){
-            role.className="Admin"
-        }else{
-            role.className="User"
-        }
-    </script>
+    {{!-- function to calculate age --}}
+    <script src="/js/age-calculator.js"></script>
 </body>
 </html>

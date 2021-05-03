@@ -13,13 +13,21 @@ router.get("/login", (req, res) => {
 
 // create new user route
 router.get("/create", (req, res) => {
-  res.render("add-user");
+  db.query(
+    "SELECT offices.ID AS OfficeID,offices.Title AS OfficeTitle from offices",
+    (err, rows) => {
+      if (!err) {
+        var message = req.query.message;
+        res.render("add-user", { offices: rows, message: message });
+      } else {
+        console.log(err);
+      }
+    }
+  );
 });
 
 // admin route
 router.get("/admin", (req, res) => {
-  // res.render("admin");
-
   // querying the database to return fields which match the specified
 
   db.query(
